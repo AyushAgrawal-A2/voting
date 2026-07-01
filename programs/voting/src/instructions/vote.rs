@@ -18,6 +18,7 @@ pub struct Vote<'info> {
     voter_pda: Account<'info, Voter>,
 
     #[account(
+        mut,
         seeds = [ELECTION_SEED, id.to_le_bytes().as_ref()],
         bump = election.bump
     )]
